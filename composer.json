@@ -1,0 +1,17 @@
+{
+    "name":         "behat/sikuli-client",
+    "description":  "Sikuli client for use with the behat/SikuliDriver",
+    "keywords":     [],
+    "homepage":     "http://mink.behat.org/",
+    "type":         "Library",
+
+    "require": {
+        "php":                 ">=5.3.1"
+    },
+
+    "autoload": {
+        "psr-0": {
+            "Behat\\SikuliClient":  "src/"
+        }
+    }
+}
