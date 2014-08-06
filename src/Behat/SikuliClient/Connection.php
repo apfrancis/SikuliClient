@@ -11,7 +11,7 @@ class Connection
 
     const OS_OSX     = 'osx';
     const OS_WINDOWS = 'windows';
-    const LINUX      = 'linux';
+    const OS_LINUX      = 'linux';
 
     /**
      * Interactive Sikuli Jython session resouce handle.
