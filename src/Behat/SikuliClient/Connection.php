@@ -855,6 +855,11 @@ class Connection
             $app = $this->callFunc('switchApp', array($name), null, true);
             sleep(2);
             return $this->callFunc('App.focusedWindow', array(), null, true);
+        } elseif ($this->getOS() === self::OS_LINUX) {
+            $app = $this->callFunc('App', array($name), null, true);
+            $this->callFunc('App.open',array($name),null,true);
+            sleep(2);
+            return $this->callFunc('focus', array(), $app, true);
         } else {
             $app = $this->callFunc('App', array($name), null, true);
             return $this->callFunc('focus', array(), $app, true);

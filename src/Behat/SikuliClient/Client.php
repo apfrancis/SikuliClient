@@ -200,7 +200,13 @@ class Client
             $browserId = $this->getBrowserid();
         }
 
-        return $this->_supportedBrowsers[$browserId];
+        $browserName = $this->_supportedBrowsers[$browserId];
+
+        if($this->connection->getOS() === 'linux'){
+            $browserName = strtolower($browserName);
+        }
+
+        return $browserName;
 
     }
 
