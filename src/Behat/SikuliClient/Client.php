@@ -475,12 +475,12 @@ class Client
     }
 
     public function setProxy($proxyAddress, $proxyPort){
-        switch ($this->_connection->getOS()) {
+        switch ($this->connection->getOS()) {
             case 'osx':
                 $this->connection->keyDown('Key.CMD + ,');
-                $this->connection->click(dirname(__FILE__).'../../../img/mac-os/firefox/preferences/advanced.png');
-                $this->connection->click(dirname(__FILE__).'../../../img/mac-os/firefox/preferences/advanced/network/settings.png');
-                $this->connection->click(dirname(__FILE__).'../../../img/mac-os/firefox/preferences/advanced/network/manual-proxy-configuration.png');
+                $this->connection->click(dirname(__FILE__).'/../../../img/mac-os/firefox/preferences/advanced.png');
+                $this->connection->click(dirname(__FILE__).'/../../../img/mac-os/firefox/preferences/advanced/network/settings.png');
+                $this->connection->click(dirname(__FILE__).'/../../../img/mac-os/firefox/preferences/advanced/network/manual-proxy-configuration.png');
                 $this->connection->type($proxyAddress);
                 $this->connection->keyDown('Key.TAB');
                 $this->connection->type($proxyPort);
@@ -491,10 +491,10 @@ class Client
                 // the only supported version of linux is currently Fedora
                 $this->connection->keyDown('Key.ALT + Key.SHIFT + e');
                 $this->connection->keyDown('n');
-                $this->connection->click(dirname(__FILE__).'../../../img/fedora/firefox/preferences/advanced.png');
-                $this->connection->click(dirname(__FILE__).'../../../img/fedora/firefox/preferences/advanced/network.png');
-                $this->connection->click(dirname(__FILE__).'../../../img/fedora/firefox/preferences/advanced/network/settings.png');
-                $this->connection->click(dirname(__FILE__).'../../../img/fedora/firefox/preferences/advanced/network/manual-proxy-configuration.png');
+                $this->connection->click(dirname(__FILE__).'/../../../img/linux/firefox/preferences/advanced.png');
+                $this->connection->click(dirname(__FILE__).'/../../../img/linux/firefox/preferences/advanced/network.png');
+                $this->connection->click(dirname(__FILE__).'/../../../img/linux/firefox/preferences/advanced/network/settings.png');
+                $this->connection->click(dirname(__FILE__).'/../../../img/linux/firefox/preferences/advanced/network/manual-proxy-configuration.png');
                 $this->connection->keyDown('Key.TAB');
                 $this->connection->type($proxyAddress);
                 $this->connection->keyDown('Key.TAB');
