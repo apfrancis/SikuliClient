@@ -233,6 +233,9 @@ class Client
                 // Shutdown browser.
                 $this->connection->keyDown('Key.ALT + Key.F4');
                 break;
+            case 'linux':
+                $this->connection->keyDown('Key.CTRL + w');
+                break;
             default:
                 // OS not supported.
                 break;
