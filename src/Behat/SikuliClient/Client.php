@@ -500,6 +500,7 @@ class Client
                 $this->connection->keyDown('Key.TAB');
                 $this->connection->type($proxyPort);
                 $this->connection->keyDown('Key.ENTER');
+                sleep(1);
                 $this->connection->keyDown('Key.ESC');
             break;
             case 'windows':
