@@ -81,7 +81,7 @@ class Client
      * @throws Exception
      * @throws \InvalidArgumentException
      */
-    public function start($browserName = null)
+    public function start($browserName = null, $settings = array())
     {
         echo('starting');
         if ($this->started) {
@@ -91,9 +91,15 @@ class Client
         $this->connection->connect();
         $this->setBrowser($browserName);
 
+
+        if(count($settings)>0){
+            foreach($settings as $key => $value){
+                $this->connection->setSetting($key,$value);
+            }
+        }
+
         $this->connection->setSetting('OcrTextSearch','True');
         $this->connection->setSetting('OcrTextRead','True');
-
         $this->started = true;
     }
 
