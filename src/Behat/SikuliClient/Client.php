@@ -498,8 +498,12 @@ class Client
             break;
             case 'linux':
                 // the only supported version of linux is currently Fedora
-                $this->connection->keyDown('Key.ALT + Key.SHIFT + e');
-                $this->connection->keyDown('n');
+                $this->connection->keyDown('Key.ENTER');
+                sleep(5);
+                $this->connection->keyDown('Key.ENTER');
+                sleep(5);
+                $this->connection->click(dirname(__FILE__).'/../../../img/linux/firefox/options.png');
+                $this->connection->click(dirname(__FILE__).'/../../../img/linux/firefox/preferences.png');
                 $this->connection->click(dirname(__FILE__).'/../../../img/linux/firefox/preferences/advanced.png');
                 $this->connection->click(dirname(__FILE__).'/../../../img/linux/firefox/preferences/advanced/network.png');
                 $this->connection->click(dirname(__FILE__).'/../../../img/linux/firefox/preferences/advanced/network/settings.png');
